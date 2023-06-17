@@ -12,7 +12,7 @@ public class EnemyShoot : MonoBehaviour
     private void Start()
     {
         GC = FindObjectOfType<GameController>();
-        InvokeRepeating(nameof(FireEnemyBullet), 1.0f, 1.0f);
+        InvokeRepeating(nameof(FireEnemyBullet), 2.0f, 3.0f);
     }
 
     void FireEnemyBullet()
@@ -24,7 +24,7 @@ public class EnemyShoot : MonoBehaviour
                 continue;
             }
 
-            if (Random.value < 1.0f / GC.invaders.transform.childCount)
+            if (Random.value < 2.0f / GC.invaders.transform.childCount)
             {
                 Instantiate(enemyBulletPrefab, invader.position, Quaternion.identity);
                 break;
